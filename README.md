@@ -840,3 +840,15 @@ Deprecated Libraries dropped or replaced by up to date ones:
 </table>
 
 Альтернативный вариант таблицы с результатом: [result.html](results.htm).
+
+
+Отчёты WebPageTest.org:
+
+- [https://www.webpagetest.org/result/160809_ZG_NAQ/](https://www.webpagetest.org/result/160809_ZG_NAQ/) — github.com;
+- [https://www.webpagetest.org/result/160809_NS_NBV/](https://www.webpagetest.org/result/160809_NS_NBV/) — www.google.ru;
+- [https://www.webpagetest.org/result/160809_NE_NCY/](https://www.webpagetest.org/result/160809_NE_NCY/) — stackoverflow.com;
+- [https://www.webpagetest.org/result/160809_8N_NFF/](https://www.webpagetest.org/result/160809_8N_NFF/) — habrahabr.ru;
+- [https://www.webpagetest.org/result/160809_5C_NH6/](https://www.webpagetest.org/result/160809_5C_NH6/) — yandex.ru;
+- [https://www.webpagetest.org/result/160809_5C_NJ8/](https://www.webpagetest.org/result/160809_5C_NJ8/) — mos.ru;
+- [https://www.webpagetest.org/result/160809_CQ_NRC/](https://www.webpagetest.org/result/160809_CQ_NRC/) — jmeter.apache.org;
+- [https://www.webpagetest.org/result/160809_KF_NXS/](https://www.webpagetest.org/result/160809_KF_NXS/) — linkedin.com.
