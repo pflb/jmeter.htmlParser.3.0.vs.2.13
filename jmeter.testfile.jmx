@@ -78,8 +78,8 @@
               <stringProp name="Argument.value">${__property(htmlParser.className,,)}</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
-            <elementProp name="jmeter.version" elementType="Argument">
-              <stringProp name="Argument.name">jmeter.version</stringProp>
+            <elementProp name="jmeterVersion" elementType="Argument">
+              <stringProp name="Argument.name">jmeterVersion</stringProp>
               <stringProp name="Argument.value">${__property(jmeter.version,,)}</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
@@ -158,12 +158,12 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">~\jmeter.${jmeter.version}.${htmlParser}.${siteKey}.xml</stringProp>
+          <stringProp name="filename">logs\jmeter.${jmeterVersion}.${htmlParser}.${siteKey}.xml</stringProp>
         </ResultCollector>
         <hashTree/>
         <ru.pflb.JMeter.Plugin.CsvLogWriter guiclass="ru.pflb.JMeter.Plugin.CsvLogWriterGui" testclass="ru.pflb.JMeter.Plugin.CsvLogWriter" testname="pflb@CsvLogWriter" enabled="true">
           <stringProp name="TestPlan.comments">Документация: http://wiki.performance-lab.ru/index.php/Плагин_CsvLogWriter</stringProp>
-          <stringProp name="filename">~\jmeter.${jmeter.version}.${htmlParser}.${siteKey}.csv</stringProp>
+          <stringProp name="filename">logs\jmeter.${jmeterVersion}.${htmlParser}.${siteKey}.csv</stringProp>
           <boolProp name="checkAdditionalParams">true</boolProp>
           <boolProp name="checkResponseData">false</boolProp>
           <boolProp name="checkUserVariables">true</boolProp>
