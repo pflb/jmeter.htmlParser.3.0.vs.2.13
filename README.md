@@ -142,12 +142,14 @@
 
 ## Количество запросов при использовании различных парсеров
 
+Таблица на Google Docs: [JMeter.HtmlParser.Compare (верхняя таблица)](https://docs.google.com/spreadsheets/d/16l32BFuUdrJmexTgF155HMAGW7EBaBT-rRjuuLc524c/edit?usp=sharing).
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th rowspan="2">Сайт</th>
       <th colspan="8">Apache.JMeter </th>
-      <th colspan="2">Chrome, webpagetest.org</th>
+      <th colspan="2">Chrome, webpagetest.org, подзапросы</th>
       <th rowspan="2" title="Качество парсинга (Avg / Document&nbsp;Complete)">Качество</th>
     </tr>
     <tr>
@@ -168,308 +170,340 @@
       <th rowspan="9" valign="top">github.com</th>
       <th rowspan="5" valign="top">2.13</th>
       <th>HtmlParser</th>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td><!--1.AP-->
-      <td rowspan="9"  style="font-weight:bold">19</td><!--4.DC-->
-      <td rowspan="9">22</td><!--5.FL-->
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td><!--1.AP-->
+      <td rowspan="9">17</td><!--4.DC-->
+      <td rowspan="9"><b>20</b></td><!--5.FL-->
+      <td>60,00%</td>
     </tr>
     <tr>
       <th>JTidy</th>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td><!--1-->
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td><!--1-->
+      <td>60,00%</td>
     </tr>
     <tr>
       <th>Jsoup</th>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td><!--1-->
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td><!--1-->
+      <td>60,00%</td>
     </tr>
     <tr>
       <th>Lagarto</th>
-      <td style="font-weight:bold">13</td>
-      <td style="font-weight:bold">13</td>
-      <td style="font-weight:bold">13</td>
-      <td style="font-weight:bold">13</td>
-      <td style="font-weight:bold">13</td>
-      <td style="font-weight:bold">13</td><!--1-->
+      <td><b>12<b></td>
+      <td><b>12<b></td>
+      <td><b>12<b></td>
+      <td><b>12<b></td>
+      <td><b>12<b></td>
+      <td><b>12<b></td><!--1-->
+      <td><b>60,00%</b></td>
     </tr>
     <tr>
       <th>Regexp</th>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td><!--1-->
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td><!--1-->
+      <td>60,00%</td>
     </tr>
     <tr>
       <th rowspan="4" valign="top">3.0</th>
       <th>JTidy</th>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td><!--1-->
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td><!--1-->
+      <td>60,00%</td>
     </tr>
     <tr>
       <th>Jsoup</th>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td><!--1-->
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td><!--1-->
+      <td>60,00%</td>
     </tr>
     <tr>
       <th>Lagarto</th>
-      <td style="font-weight:bold">13</td>
-      <td style="font-weight:bold">13</td>
-      <td style="font-weight:bold">13</td>
-      <td style="font-weight:bold">13</td>
-      <td style="font-weight:bold">13</td>
-      <td style="font-weight:bold">13</td><!--1-->
+      <td><b>12<b></td>
+      <td><b>12<b></td>
+      <td><b>12<b></td>
+      <td><b>12<b></td>
+      <td><b>12<b></td>
+      <td><b>12<b></td><!--1-->
+      <td><b>60,00%</b></td>
     </tr>
     <tr>
       <th>Regexp</th>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td>
-      <td>13</td><!--1-->
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td><!--1-->
+      <td>60,00%</td>
     </tr>
     <tr>
       <th rowspan="9" valign="top">google.ru</th>
       <th rowspan="5" valign="top">2.13</th>
       <th>HtmlParser</th>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td><!--1.AP-->
-      <td rowspan="9"  style="font-weight:bold">9</td><!--4.DC-->
-      <td rowspan="9">12</td><!--5.FL-->
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td><!--1.AP-->
+      <td rowspan="9">9</td><!--4.DC-->
+      <td rowspan="9"><b>12</b></td><!--5.FL-->
+      <td>33,33%</td>
     </tr>
     <tr>
       <th>JTidy</th>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td>
+      <td>3</td>
       <td>4</td>
-      <td>4,8</td><!--1.AP-->
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>3,8</td><!--1.AP-->
+      <td>31,67%</td>
     </tr>
     <tr>
       <th>Jsoup</th>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td><!--1.AP-->
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td><!--1.AP-->
+      <td>33,33%</td>
     </tr>
     <tr>
       <th>Lagarto</th>
-      <td style="font-weight:bold">5</td>
-      <td style="font-weight:bold">5</td>
-      <td style="font-weight:bold">5</td>
-      <td style="font-weight:bold">5</td>
-      <td style="font-weight:bold">5</td>
-      <td style="font-weight:bold">5</td><!--1.AP-->
+      <td><b>4</b></td>
+      <td><b>4</b></td>
+      <td><b>4</b></td>
+      <td><b>4</b></td>
+      <td><b>4</b></td>
+      <td><b>4</b></td><!--1.AP-->
+      <td><b>33,33%</b></td>
     </tr>
     <tr>
       <th>Regexp</th>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td><!--1.AP-->
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td><!--1.AP-->
+      <td>16,67%</td>
     </tr>
     <tr>
       <th rowspan="4" valign="top">3.0</th>
       <th>JTidy</th>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td><!--1.AP-->
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td><!--1.AP-->
+      <td>33,33%</td>
     </tr>
     <tr>
       <th>Jsoup</th>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td><!--1.AP-->
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td><!--1.AP-->
+      <td>33,33%</td>
     </tr>
     <tr>
       <th>Lagarto</th>
-      <td style="font-weight:bold">5</td>
-      <td style="font-weight:bold">5</td>
-      <td style="font-weight:bold">5</td>
-      <td style="font-weight:bold">5</td>
-      <td style="font-weight:bold">5</td>
-      <td style="font-weight:bold">5</td><!--1.AP-->
+      <td><b>3</b></td>
+      <td><b>4</b></td>
+      <td><b>4</b></td>
+      <td><b>4</b></td>
+      <td><b>4</b></td>
+      <td><b>3,8</b></td><!--1.AP-->
+      <td><b>31,67%</b></td>
     </tr>
     <tr>
       <th>Regexp</th>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td><!--1.AP-->
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td><!--1.AP-->
+      <td>16,67%</td>
     </tr>
     <tr>
       <th rowspan="9" valign="top">habrahabr.ru</th>
       <th rowspan="5" valign="top">2.13</th>
       <th>HtmlParser</th>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td><!--1.AP-->
-      <td rowspan="9"  style="font-weight:bold">113</td><!--4.DC-->
-      <td rowspan="9">120</td><!--5.FL-->
+      <td>64</td>
+      <td>64</td>
+      <td>64</td>
+      <td>64</td>
+      <td>64</td>
+      <td>64</td><!--1.AP-->
+      <td rowspan="9">112</td><!--4.DC-->
+      <td rowspan="9"><b>117</b></td><!--5.FL-->
+      <td>54,70%</td>
     </tr>
     <tr>
       <th>JTidy</th>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td><!--1.AP-->
+      <td>64</td>
+      <td>64</td>
+      <td>64</td>
+      <td>64</td>
+      <td>64</td>
+      <td>64</td><!--1.AP-->
+      <td>54,70%</td>
     </tr>
     <tr>
       <th>Jsoup</th>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td><!--1.AP-->
+      <td>64</td>
+      <td>64</td>
+      <td>64</td>
+      <td>64</td>
+      <td>64</td>
+      <td>64</td><!--1.AP-->
+      <td>54,70%</td>
     </tr>
     <tr>
       <th>Lagarto</th>
-      <td style="font-weight:bold">41</td>
-      <td style="font-weight:bold">41</td>
-      <td style="font-weight:bold">41</td>
-      <td style="font-weight:bold">41</td>
-      <td style="font-weight:bold">41</td>
-      <td style="font-weight:bold">41</td><!--1.AP-->
+      <td><b>61<b></td>
+      <td><b>61<b></td>
+      <td><b>61<b></td>
+      <td><b>61<b></td>
+      <td><b>61<b></td>
+      <td><b>61<b></td><!--1.AP-->
+      <td><b>52,14%<b></td>
     </tr>
     <tr>
       <th>Regexp</th>
-      <td>45</td>
-      <td>45</td>
-      <td>45</td>
-      <td>45</td>
-      <td>45</td>
-      <td>45</td><!--1.AP-->
+      <td>65</td>
+      <td>65</td>
+      <td>65</td>
+      <td>65</td>
+      <td>65</td>
+      <td>65</td><!--1.AP-->
+      <td>55,56%</td>
     </tr>
     <tr>
       <th rowspan="4" valign="top">3.0</th>
       <th>JTidy</th>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td><!--1.AP-->
+      <td>58</td>
+      <td>58</td>
+      <td>58</td>
+      <td>58</td>
+      <td>58</td>
+      <td>58</td><!--1.AP-->
+      <td>49,57%</td>
     </tr>
     <tr>
       <th>Jsoup</th>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td>
-      <td>44</td><!--1.AP-->
+      <td>58</td>
+      <td>58</td>
+      <td>58</td>
+      <td>58</td>
+      <td>58</td>
+      <td>58</td><!--1.AP-->
+      <td>49,57%</td>
     </tr>
     <tr>
       <th>Lagarto</th>
-      <td style="font-weight:bold">41</td>
-      <td style="font-weight:bold">41</td>
-      <td style="font-weight:bold">41</td>
-      <td style="font-weight:bold">41</td>
-      <td style="font-weight:bold">41</td>
-      <td style="font-weight:bold">41</td><!--1.AP-->
+      <td><b>55<b></td>
+      <td><b>55<b></td>
+      <td><b>55<b></td>
+      <td><b>55<b></td>
+      <td><b>55<b></td>
+      <td><b>55<b></td><!--1.AP-->
+      <td><b>47,01%<b></td>
     </tr>
     <tr>
       <th>Regexp</th>
-      <td>45</td>
-      <td>45</td>
-      <td>45</td>
-      <td>45</td>
-      <td>45</td>
-      <td>45</td><!--1.AP-->
+      <td>59</td>
+      <td>59</td>
+      <td>59</td>
+      <td>59</td>
+      <td>59</td>
+      <td>59</td><!--1.AP-->
+      <td>50,43%</td>
     </tr>
     <tr>
       <th rowspan="9" valign="top">jmeter.apache.org</th>
       <th rowspan="5" valign="top">2.13</th>
       <th>HtmlParser</th>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td><!--1.AP-->
-      <td rowspan="9" style="font-weight:bold">10</td><!--4.DC-->
-      <td rowspan="9">11</td><!--5.FL-->
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td><!--1.AP-->
+      <td rowspan="9">9</td><!--4.DC-->
+      <td rowspan="9"><b>10</b></td><!--5.FL-->
+      <td>90,00%</td>
     </tr>
     <tr>
       <th>JTidy</th>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td><!--1.AP-->
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td><!--1.AP-->
+      <td>90,00%</td>
     </tr>
     <tr>
       <th>Jsoup</th>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td><!--1.AP-->
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td><!--1.AP-->
+      <td>90,00%</td>
     </tr>
     <tr>
       <th>Lagarto</th>
-      <td style="font-weight:bold">10</td>
-      <td style="font-weight:bold">10</td>
-      <td style="font-weight:bold">10</td>
-      <td style="font-weight:bold">10</td>
-      <td style="font-weight:bold">10</td>
-      <td style="font-weight:bold">10</td><!--1.AP-->
+      <td><b>9</b></td>
+      <td><b>9</b></td>
+      <td><b>9</b></td>
+      <td><b>9</b></td>
+      <td><b>9</b></td>
+      <td><b>9</b></td><!--1.AP-->
+      <td><b>90,00%</b></td>
     </tr>
     <tr>
       <th>Regexp</th>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td><!--1.AP-->
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td><!--1.AP-->
+      <td>90,00%</td>
     </tr>
     <tr>
       <th rowspan="4" valign="top">3.0</th>
@@ -480,7 +514,7 @@
       <td>10</td>
       <td>10</td>
       <td>10</td><!--1.AP-->
-
+      <td>100,00%</td>
     </tr>
     <tr>
       <th>Jsoup</th>
@@ -490,15 +524,17 @@
       <td>10</td>
       <td>10</td>
       <td>10</td><!--1.AP-->
+      <td>100,00%</td>
     </tr>
     <tr>
       <th>Lagarto</th>
-      <td style="font-weight:bold">10</td>
-      <td style="font-weight:bold">10</td>
-      <td style="font-weight:bold">10</td>
-      <td style="font-weight:bold">10</td>
-      <td style="font-weight:bold">10</td>
-      <td style="font-weight:bold">10</td><!--1.AP-->
+      <td><b>10</b></td>
+      <td><b>10</b></td>
+      <td><b>10</b></td>
+      <td><b>10</b></td>
+      <td><b>10</b></td>
+      <td><b>10</b></td><!--1.AP-->
+      <td><b>100,00%</b></td>
     </tr>
     <tr>
       <th>Regexp</th>
@@ -508,423 +544,417 @@
       <td>10</td>
       <td>10</td>
       <td>10</td><!--1.AP-->
+      <td>100,00%</td>
     </tr>
     <tr>
       <th rowspan="9" valign="top">linkedin.com</th>
       <th rowspan="5" valign="top">2.13</th>
       <th>HtmlParser</th>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td><!--1.AP-->
-      <td rowspan="9" style="font-weight:bold">20</td><!--4.DC-->
-      <td rowspan="9">22</td><!--5.FL-->
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td><!--1.AP-->
+      <td rowspan="9">19</td><!--4.DC-->
+      <td rowspan="9"><b>21</b></td><!--5.FL-->
+      <td>47,62%</td>
     </tr>
     <tr>
       <th>JTidy</th>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td><!--1.AP-->
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td><!--1.AP-->
+      <td>47,62%</td>
     </tr>
     <tr>
       <th>Jsoup</th>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td><!--1.AP-->
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td><!--1.AP-->
+      <td>47,62%</td>
     </tr>
     <tr>
       <th>Lagarto</th>
-      <td style="font-weight:bold">11</td>
-      <td style="font-weight:bold">11</td>
-      <td style="font-weight:bold">11</td>
-      <td style="font-weight:bold">11</td>
-      <td style="font-weight:bold">11</td>
-      <td style="font-weight:bold">11</td><!--1.AP-->
+      <td><b>10</b></td>
+      <td><b>10</b></td>
+      <td><b>10</b></td>
+      <td><b>10</b></td>
+      <td><b>10</b></td>
+      <td><b>10</b></td><!--1.AP-->
+      <td><b>47,62%</b></td>
     </tr>
     <tr>
       <th>Regexp</th>
-      <td>7</td>
-      <td>7</td>
-      <td>7</td>
-      <td>7</td>
-      <td>7</td>
-      <td>7</td><!--1.AP-->
+      <td>6</td>
+      <td>10</td>
+      <td>6</td>
+      <td>6</td>
+      <td>10</td>
+      <td>7,6</td><!--1.AP-->
+      <td>36,19%</td>
     </tr>
     <tr>
       <th rowspan="4" valign="top">3.0</th>
       <th>JTidy</th>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td><!--1.AP-->
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td><!--1.AP-->
+      <td>47,62%</td>
     </tr>
     <tr>
       <th>Jsoup</th>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td><!--1.AP-->
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td><!--1.AP-->
+      <td>47,62%</td>
     </tr>
     <tr>
       <th>Lagarto</th>
-      <td style="font-weight:bold">11</td>
-      <td style="font-weight:bold">11</td>
-      <td style="font-weight:bold">11</td>
-      <td style="font-weight:bold">11</td>
-      <td style="font-weight:bold">11</td>
-      <td style="font-weight:bold">11</td><!--1.AP-->
+      <td><b>10</b></td>
+      <td><b>10</b></td>
+      <td><b>10</b></td>
+      <td><b>10</b></td>
+      <td><b>10</b></td>
+      <td><b>10</b></td><!--1.AP-->
+      <td><b>47,62%</b></td>
     </tr>
     <tr>
       <th>Regexp</th>
-      <td>7</td>
-      <td>7</td>
-      <td>7</td>
-      <td>7</td>
-      <td>7</td>
-      <td>7</td><!--1.AP-->
+      <td>10</td>
+      <td>10</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>7,6</td><!--1.AP-->
+      <td>36,19%</td>
     </tr>
     <tr>
       <th rowspan="9" valign="top">mos.ru</th>
       <th rowspan="5" valign="top">2.13</th>
       <th>HtmlParser</th>
-      <td>25</td>
-      <td>25</td>
-      <td>25</td>
-      <td>25</td>
-      <td>25</td>
-      <td>25</td><!--1.AP-->
-      <td rowspan="9" style="font-weight:bold">98</td><!--4.DC-->
-      <td rowspan="9">144</td><!--5.FL-->
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td><!--1.AP-->
+      <td rowspan="9">119</td><!--4.DC-->
+      <td rowspan="9"><b>144</b></td><!--5.FL-->
+      <td>16,67%</td>
     </tr>
     <tr>
       <th>JTidy</th>
-      <td>25</td>
-      <td>25</td>
-      <td>25</td>
-      <td>25</td>
-      <td>25</td>
-      <td>25</td><!--1.AP-->
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td><!--1.AP-->
+      <td>16,67%</td>
     </tr>
     <tr>
       <th>Jsoup</th>
-      <td>25</td>
-      <td>25</td>
-      <td>25</td>
-      <td>25</td>
-      <td>25</td>
-      <td>25</td><!--1.AP-->
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td><!--1.AP-->
+      <td>16,67%</td>
     </tr>
     <tr>
       <th>Lagarto</th>
-      <td style="font-weight:bold">14</td>
-      <td style="font-weight:bold">14</td>
-      <td style="font-weight:bold">14</td>
-      <td style="font-weight:bold">14</td>
-      <td style="font-weight:bold">14</td>
-      <td style="font-weight:bold">14</td><!--1.AP-->
+      <td><b>13</b></td>
+      <td><b>13</b></td>
+      <td><b>13</b></td>
+      <td><b>13</b></td>
+      <td><b>13</b></td>
+      <td><b>13</b></td><!--1.AP-->
+      <td><b>9,03%</b></td>
     </tr>
     <tr>
       <th>Regexp</th>
-      <td>25</td>
-      <td>25</td>
-      <td>25</td>
-      <td>25</td>
-      <td>25</td>
-      <td>25</td><!--1.AP-->
+      <td>24</td>
+      <td>24</td>
+      <td>0</td>
+      <td>24</td>
+      <td>24</td>
+      <td>19,2</td><!--1.AP-->
+      <td>13,33%</td>
     </tr>
     <tr>
       <th rowspan="4" valign="top">3.0</th>
       <th>JTidy</th>
-      <td>26</td>
-      <td>26</td>
-      <td>26</td>
-      <td>26</td>
-      <td>26</td>
-      <td>26</td><!--1.AP-->
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td><!--1.AP-->
+      <td>17,36%</td>
     </tr>
     <tr>
       <th>Jsoup</th>
-      <td>26</td>
-      <td>26</td>
-      <td>26</td>
-      <td>26</td>
-      <td>26</td>
-      <td>26</td><!--1.AP-->
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td><!--1.AP-->
+      <td>17,36%</td>
     </tr>
     <tr>
       <th>Lagarto</th>
-      <td style="font-weight:bold">15</td>
-      <td style="font-weight:bold">15</td>
-      <td style="font-weight:bold">15</td>
-      <td style="font-weight:bold">15</td>
-      <td style="font-weight:bold">15</td>
-      <td style="font-weight:bold">15</td><!--1.AP-->
+      <td><b>14</b></td>
+      <td><b>14</b></td>
+      <td><b>14</b></td>
+      <td><b>14</b></td>
+      <td><b>14</b></td>
+      <td><b>14</b></td><!--1.AP-->
+      <td><b>9,72%</b></td>
     </tr>
     <tr>
       <th>Regexp</th>
-      <td>26</td>
-      <td>26</td>
-      <td>26</td>
-      <td>26</td>
-      <td>26</td>
-      <td>26</td><!--1.AP-->
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td><!--1.AP-->
+      <td>17,36%</td>
     </tr>
     <tr>
       <th rowspan="9" valign="top">stackoverflow.com</th>
       <th rowspan="5" valign="top">2.13</th>
       <th>HtmlParser</th>
-      <td>16</td>
-      <td>16</td>
-      <td>16</td>
-      <td>16</td>
-      <td>16</td>
-      <td>16</td><!--1.AP-->
-      <td rowspan="9" style="font-weight:bold">39</td><!--4.DC-->
-      <td rowspan="9">40</td><!--5.FL-->
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td><!--1.AP-->
+      <td rowspan="9">41</td><!--4.DC-->
+      <td rowspan="9"><b>42</b></td><!--5.FL-->
+      <td>40,48%</td>
     </tr>
     <tr>
       <th>JTidy</th>
-      <td>16</td>
-      <td>16</td>
-      <td>16</td>
-      <td>16</td>
-      <td>16</td>
-      <td>16</td><!--1.AP-->
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td><!--1.AP-->
+      <td>40,48%</td>
     </tr>
     <tr>
       <th>Jsoup</th>
       <td>16</td>
       <td>16</td>
       <td>16</td>
-      <td>18</td>
-      <td>18</td>
-      <td>16,8</td><!--1.AP-->
+      <td>16</td>
+      <td>16</td>
+      <td>16</td><!--1.AP-->
+      <td>38,10%</td>
     </tr>
     <tr>
       <th>Lagarto</th>
-      <td style="font-weight:bold">14</td>
-      <td style="font-weight:bold">14</td>
-      <td style="font-weight:bold">15</td>
-      <td style="font-weight:bold">15</td>
-      <td style="font-weight:bold">15</td>
-      <td style="font-weight:bold">14,6</td><!--1.AP-->
+      <td><b>16</b></td>
+      <td><b>16</b></td>
+      <td><b>16</b></td>
+      <td><b>16</b></td>
+      <td><b>16</b></td>
+      <td><b>16</b></td><!--1.AP-->
+      <td><b>38,10%</b></td>
     </tr>
     <tr>
       <th>Regexp</th>
-      <td>16</td>
+      <td>17</td>
       <td>16</td>
       <td>16</td>
       <td>16</td>
       <td>16</td>
       <td>16</td><!--1.AP-->
+      <td>16,2%</td>
     </tr>
     <tr>
       <th rowspan="4" valign="top">3.0</th>
       <th>JTidy</th>
-      <td>17</td>
-      <td>17</td>
-      <td>17</td>
-      <td>17</td>
-      <td>17</td>
-      <td>17</td><!--1.AP-->
+      <td>16</td>
+      <td>16</td>
+      <td>16</td>
+      <td>16</td>
+      <td>16</td>
+      <td>16</td><!--1.AP-->
+      <td>38,10%</td>
     </tr>
     <tr>
       <th>Jsoup</th>
-      <td>17</td>
-      <td>17</td>
-      <td>17</td>
-      <td>17</td>
-      <td>17</td>
-      <td>17</td><!--1.AP-->
+      <td>16</td>
+      <td>16</td>
+      <td>16</td>
+      <td>16</td>
+      <td>16</td>
+      <td>16</td><!--1.AP-->
+      <td>38,10%</td>
     </tr>
     <tr>
       <th>Lagarto</th>
-      <td style="font-weight:bold">14</td>
-      <td style="font-weight:bold">16</td>
-      <td style="font-weight:bold">16</td>
-      <td style="font-weight:bold">16</td>
-      <td style="font-weight:bold">16</td>
-      <td style="font-weight:bold">15,6</td><!--1.AP-->
+      <td><b>15</b></td>
+      <td><b>15</b></td>
+      <td><b>15</b></td>
+      <td><b>15</b></td>
+      <td><b>15</b></td>
+      <td><b>15</b></td><!--1.AP-->
+      <td><b>35,71%</b></td>
     </tr>
     <tr>
       <th>Regexp</th>
-      <td>17</td>
-      <td>17</td>
-      <td>17</td>
-      <td>17</td>
-      <td>17</td>
-      <td>17</td><!--1.AP-->
+      <td>16</td>
+      <td>16</td>
+      <td>16</td>
+      <td>16</td>
+      <td>16</td>
+      <td>16</td><!--1.AP-->
+      <td>38,10%</td>
     </tr>
     <tr>
       <th rowspan="9" valign="top">yandex.ru</th>
       <th rowspan="5" valign="top">2.13</th>
       <th>HtmlParser</th>
-      <td>69</td>
+      <td>70</td>
       <td>68</td>
+      <td>72</td>
+      <td>67</td>
       <td>69</td>
-      <td>68</td>
-      <td>69</td>
-      <td>68,6</td><!--1.AP-->
-      <td rowspan="9" style="font-weight:bold">34</td><!--4.DC-->
-      <td rowspan="9">36</td><!--5.FL-->
+      <td>69,2</td><!--1.AP-->
+      <td rowspan="9">33</td><!--4.DC-->
+      <td rowspan="9"><b>35</b></td><!--5.FL-->
+      <td>197,71%</td>
     </tr>
     <tr>
       <th>JTidy</th>
-      <td>20</td>
+      <td>18</td>
+      <td>18</td>
       <td>19</td>
-      <td>19</td>
-      <td>19</td>
-      <td>19</td>
-      <td>19,2</td><!--1.AP-->
+      <td>18</td>
+      <td>18</td>
+      <td>18,2</td><!--1.AP-->
+      <td>52,00%</td>
     </tr>
     <tr>
       <th>Jsoup</th>
-      <td>20</td>
-      <td>19</td>
-      <td>19</td>
-      <td>20</td>
-      <td>19</td>
-      <td>19,4</td><!--1.AP-->
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td><!--1.AP-->
+      <td>51,43%</td>
     </tr>
     <tr>
       <th>Lagarto</th>
-      <td style="font-weight:bold">15</td>
-      <td style="font-weight:bold">15</td>
-      <td style="font-weight:bold">15</td>
-      <td style="font-weight:bold">15</td>
-      <td style="font-weight:bold">15</td>
-      <td style="font-weight:bold">15</td><!--1.AP-->
+      <td><b>14</b></td>
+      <td><b>14</b></td>
+      <td><b>14</b></td>
+      <td><b>14</b></td>
+      <td><b>14</b></td>
+      <td><b>14</b></td><!--1.AP-->
+      <td><b>40,00%</b></td>
     </tr>
     <tr>
       <th>Regexp</th>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
       <td>19</td>
-      <td>19</td>
-      <td>19</td>
-      <td>19</td>
-      <td>19</td>
-      <td>19</td><!--1.AP-->
+      <td>18,2</td><!--1.AP-->
+      <td>52,00%</td>
     </tr>
     <tr>
       <th rowspan="4" valign="top">3.0</th>
       <th>JTidy</th>
-      <td>639</td>
-      <td>642</td>
-      <td>642</td>
-      <td>513</td>
+      <td>647</td>
+      <td>645</td>
+      <td>619</td>
       <td>644</td>
-      <td>616</td><!--1.AP-->
+      <td>578</td>
+      <td>626,6</td><!--1.AP-->
+      <td>1790,29%</td>
     </tr>
     <tr>
       <th>Jsoup</th>
-      <td>643</td>
-      <td>334</td>
-      <td>639</td>
-      <td>641</td>
-      <td>643</td>
-      <td>580</td><!--1.AP-->
+      <td>579</td>
+      <td>640</td>
+      <td>638</td>
+      <td>644</td>
+      <td>620</td>
+      <td>624,2</td><!--1.AP-->
+      <td>1783,43%</td>
     </tr>
     <tr>
       <th>Lagarto</th>
-      <td style="font-weight:bold">349</td>
-      <td style="font-weight:bold">449</td>
-      <td style="font-weight:bold">451</td>
-      <td style="font-weight:bold">449</td>
-      <td style="font-weight:bold">13</td>
-      <td style="font-weight:bold">342,2</td><!--1.AP-->
+      <td><b>48</b></td>
+      <td><b>451</b></td>
+      <td><b>441</b></td>
+      <td><b>450</b></td>
+      <td><b>450</b></td>
+      <td><b>368</b></td><!--1.AP-->
+      <td><b>1051,43%</b></td>
     </tr>
     <tr>
       <th>Regexp</th>
-      <td>641</td>
-      <td>635</td>
-      <td>638</td>
-      <td>436</td>
-      <td>645</td>
-      <td>599</td><!--1.AP-->
+      <td>642</td>
+      <td>644</td>
+      <td>337</td>
+      <td>642</td>
+      <td>644</td>
+      <td>581,8</td><!--1.AP-->
+      <td>1662,29%</td>
     </tr>
   </tbody>
 </table>
-
-Таблица на Google Docs: [JMeter.HtmlParser.Compare (Results)](https://docs.google.com/spreadsheets/d/16l32BFuUdrJmexTgF155HMAGW7EBaBT-rRjuuLc524c/edit#gid=871370540).
 
 Описание столбцов:
 
 -    **Before Start Render** — количество запросов, сделанных браузером, до момента начала отображения содержимого страницы. Это html-разметка, основные js и css-файлы, основные изображения.
 -    **Document Complete** — количество запросов, сделанных браузером, на момент полной загрузки документа. Тут уже загрузились все ресурсы страницы.
--    **Fully Loaded** — количество запросов, сделанных браузером, на момент когда отработал javascript, когда сработали все виджеты.
+-    **Fully Loaded** — количество запросов, сделанных браузером, на момент когда отработал javascript, когда загрузилось всё.
 
-Отличным результатом работы парсеров будет, если запросов будет столько же, сколько браузер **Google Chrome** делает на момент **Document Complete**. Мерилом реалистичности работы **Apache.JMeter** при использовании конкретного парсера является близость количества запросов к количеству запросов, выполняемых браузером на момент **Document Complete**.
+Хорошим результатом работы парсеров будет, если запросов будет столько же, сколько браузер **Google Chrome** делает на момент **Document Complete**, а отличным — на момент **Fully Loaded**. Мерилом реалистичности работы **Apache.JMeter** при использовании конкретного парсера будем считать близость количества запросов к количеству запросов, выполняемых браузером на момент **Fully Loaded**.
 
 Если исключить результаты тестирования сайта yandex.ru, где:
 
--    сайт ссылается сам на себя
--    кеширование стартовой страницы настроено необычно для Apache.JMeter и парсеров
--    в результате парсинг уходит в рекурсию делая снова и снова запросы к yandex.ru пока глубина рекурсии не достигает максимального уровня и завершается ошибкой:
+-    парсинг уходит в рекурсию делая снова и снова запросы к yandex.ru пока глубина рекурсии не достигает максимального уровня и завершается ошибкой:
 > `java.lang.Exception: Maximum frame/iframe nesting depth exceeded`.
 
-и за мерило качества работы парсеров принять количество запросов на момент **Document Complete**, то получим такую таблицу качества работы парсеров: 
+и за мерило качества работы парсеров принять количество запросов на момент **Fully Loaded**, то получим такую таблицу среднего качества работы парсеров.
+
+### Среднее качество работы парсеров
+
+Таблица на Google Docs: [JMeter.HtmlParser.Compare (нижняя таблица)](https://docs.google.com/spreadsheets/d/16l32BFuUdrJmexTgF155HMAGW7EBaBT-rRjuuLc524c/edit?usp=sharing).
+
+![Среднее качество работы парсеров](images/parsers.results.PNG)
 
 
-<table class="wikitable collapsible sortable jquery-tablesorter">
-<thead><tr>
-<th class="headerSort" tabindex="0" role="columnheader button" title="Упорядочить по возрастанию"> Парсер HTML </th>
-<th class="headerSort" tabindex="0" role="columnheader button" title="Упорядочить по возрастанию"> 2.13 r1665067 </th>
-<th class="headerSort" tabindex="0" role="columnheader button" title="Упорядочить по возрастанию"> 3.0 r1743807 </th>
-<th class="headerSort" tabindex="0" role="columnheader button" title="Упорядочить по возрастанию"> Общий итог
-</th></tr></thead><tbody>
-<tr>
-<td> HtmlParserHTMLParser </td>
-<td style="background: #dbe182;">54,92% </td>
-<td>                                     </td>
-<td style="background: #dbe182;">54,92%
-</td></tr>
-<tr>
-<td> JsoupBasedHtmlParser </td>
-<td style="background: #96cd7e;">55,21% </td>
-<td style="background: #63be7b;">55,43% </td>
-<td style="background: #7dc67d;">55,32%
-</td></tr>
-<tr>
-<td> JTidyHTMLParser      </td>
-<td style="background: #fee783;">54,60% </td>
-<td style="background: #63be7b;">55,43% </td>
-<td style="background: #c4da81;">55,02%
-</td></tr>
-<tr>
-<td>LagartoBasedHtmlParser</td>
-<td style="background: #fcb679;">52,43% </td>
-<td style="background: #fcc17c;">52,94% </td>
-<td style="background: #fcbb7a;">52,68%
-</td></tr>
-<tr>
-<td> RegexpHTMLParser     </td>
-<td style="background: #f8696b;">49,02% </td>
-<td style="background: #f8746d;">49,53% </td>
-<td style="background: #f86e6c;">49,27%
-</td></tr>
-<tr>
-<td> <b>Общий итог</b>     </td>
-<td>  53,24%                             </td>
-<td>  53,33%                             </td>
-<td>  53,28%
-</td></tr></tbody><tfoot></tfoot></table>
 
-Таблица на Google Docs: [JMeter.HtmlParser.Compare (TotalResult)](https://docs.google.com/spreadsheets/d/16l32BFuUdrJmexTgF155HMAGW7EBaBT-rRjuuLc524c/edit#gid=2130783480).
+Самый точный парсер **HTMLParser** в **Apache.JMeter** 2.13. В **Apache.JMeter** 3.0 парсеры **Jsoup** и **JTidy** показали одинаковое качество. Парсер **Lagarto** отстаёт от лидеров. Полнота парсинга для парсера **Lagarto** в **Apache.JMeter** 3.0 снизилась по сравнению с **Apache.JMeter** 2.13.
 
-Самый точный парсер **Jsoup**. В **Apache.JMeter** 3.0 парсеры **Jsoup** и **JTidy** показали одинаковое качество. Парсер **Lagarto** отстаёт от лидера **Jsoup** по качеству разбора на 2,49%.
-
-Качество работы парсера **Lagarto** на актуальной версии **Apache.JMeter** 3.0 составило 52,94%, лишь половина всех запросов не была послана.
+Качество работы парсера **Lagarto** на актуальной версии **Apache.JMeter** 3.0 составило 32,73%, лишь треть всех подзапросов была послана, две трети нагрузки на статику не было подано.
 
 # Логи и их обработка
 
@@ -1034,38 +1064,80 @@
 	from os import listdir
 	import numpy as np
 	
-
-	# Настройки - каталог с логами и настройки считывания логов
-	dirPath = "D:/project/jmeter.3.0.vs.jmeter.2.13/logs"
+	
+	# Настройки - каталог с логами и настройки считывания логов.
+	dirPath = "D:/project/jmeter.htmlParser.3.0.vs.2.13/logs"
 	
 	read_csv_param = dict( index_col=['timeStamp'],
 	                       low_memory=False,
 	                       sep = ";",
 	                       na_values=[' ','','null'])
 	
-	# Получение списка csv-файлов в каталоге с логами
+	# Получение списка csv-файлов в каталоге с логами.
 	files = filter(lambda a: '.csv' in a, listdir(dirPath))
 	
 	
-	# Чтение содержимого всех csv-файлов в DataFrame dfs
+	# Чтение содержимого всех csv-файлов в DataFrame dfs.
 	csvfile = dirPath + "/" + files[0]
 	print(files[0])
-	dfs = pd.read_csv(csvfile, **read_csv_param)
+	dfs = pd.read_csv(csvfile,**read_csv_param)
 	for csvfile in files[1:]:
 	    print(csvfile)
 	    tempDfs = pd.read_csv(dirPath + "/" + csvfile, **read_csv_param)
 	    dfs = dfs.append(tempDfs)
 	
-	dfs.to_excel(dirPath + "/total.xlsx")
+	#dfs.to_excel(dirPath + "/total.xlsx")
 	
-	# Убрать из выборки все JSR223, по ним статистику строить не надо, оставить только HTTP Request Sampler
-	# У JSR223 поле URL пустое, у http-запросов поле URL заполнено
+	# Убрать из выборки все JSR223, по ним статистику строить не надо, оставить только HTTP Request Sampler.
+	# У JSR223 URL пустой, у HTTP-запросов URL указан.
 	dfs = dfs[(pd.isnull(dfs.URL) == False)]
 	
 	
-	# Сводная таблица по количеству запросов, сохраняется в report.requests.html - основной результат работы
+	# Сводная таблица по количеству подзапросов, сохраняется в report.subrequests.html - основной результат работы.
+	# Из количества запросов удаляется один запрос, чтобы исключить корневой запрос.
+	# Цель данного исследования - подсчёт количества подзапросов, поэтому корневой исключается.
 	pd.pivot_table(dfs, 
 	               index=['siteKey', "jmeterVersion", "htmlParser"], 
 	               values="URL", 
 	               columns=["i"], 
-	               aggfunc="count").to_html(dirPath + "/report.requests.html")
+	               aggfunc=lambda url: url.count()-1).to_html(dirPath + "/report.subrequest.count.html")
+
+
+# Рекурсивная загрузка на yandex.ru
+
+![Apache.JMeter уходит в рекурсию](images/yandex.ru..recursion.PNG)
+
+Как видно:
+
+1. Apache.JMeter находит и переходит по ссылке `https://yandex.ru/clck/redir/dtype=stred....7004fcb3793e79bb1ac9e&keyno=12`
+2. Затем находит новую уникальную ссылку `https://yandex.ru/clck/redir/dtype=stred....cd1c46cad58fbfe2f61&keyno=12`
+3. И так уходит в рекурсию.
+
+В данном случае это картинка внутри ссылки на загрузку Яндекс Браузера:
+
+![Apache.JMeter уходит в рекурсию](images/yandex.ru..recursion.html.PNG)
+
+И эту картинку парсер находит. JMeter пробует её скачать, в ответ получает html-страницу, там снова ссылка на картинку и другие ссылки. Поведение **Apache.JMeter** корректное.
+
+А в **Apache.JMeter** 2.13 либо:
+-  есть ограничение на длину ссылок, и за счёт отсекания уникального окончания ссылки рекурсии не происходит;
+-  или в **Apache.JMeter** 2.13, что-то неправильно работает в парсерах;
+-  или в **Apache.JMeter** 2.13, что-то работает наоборот правильно - куки, ещё что-то и сам сервер Яндекса отвечает ему так, чтобы тот не уходил в рекурсию, например, отвечает картинкой на запрос картинки, а не новой html-страницей.
+
+Гадать не буду. Кажется безвыходная ситуация. Но таких ситуаций не бывает. Всегда есть решение.
+
+Например, можно попробовать в качестве **User-Agent** указать Яндекс Браузер. Тогда сервер, наверно, не покажет картинку для скачивания браузера, или на запрос картинки будет отвечать картинкой, и рекурсии не будет. Это догадка, не проверял её.
+
+Сейчас в скрипте был указан **User-Agent** для Google Chrome для синхронности с работой webpagetest.org, и сервер видя не свой браузер, видимо, предлагает ссылку на свой.
+
+# Практическая ценность данной статьи
+
+Особой ценности в статье нет. Но некоторые полезные выводы сделать можно:
+
+- из безвыходных ситуаций есть выход;
+- парсеры работают почти одинаково, а значит можно применять любой;
+- парсеры заточены под работу с простыми сайтами, такими как jmeter.apache.org;
+- на сайтах с большим количеством содержимого парсеры работают значительно хуже реального браузера;
+- полнота загрузки встроенных ресурсов в новой версии JMeter возросла, но незначительно, а на таком сейте как habrahabr.ru снизилась.
+- продемонстрировано прикладное использование плагина **CsvLogWriter** (см. статью [Плагин CsvLogWriter для JMeter](https://habrahabr.ru/post/308098/)),  логирующего запросы к embedded-ресурсам в csv-лог, который сделала моя коллега Александра @Sanchez92;
+- с помощью bat-файлов, передачи парамеров **JMeter** через командную строку, логирования переменных и обработки csv-логов с помощью **pandas** можно тестировать сам инструмент тестирования; методика отработана.
