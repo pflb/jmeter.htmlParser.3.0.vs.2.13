@@ -916,6 +916,10 @@
   </tbody>
 </table>
 
+![JMeter.HtmlParser.Compare](images/JMeter.HtmlParser.Compare.1-2.PNG)
+![JMeter.HtmlParser.Compare](images/JMeter.HtmlParser.Compare.3-5.PNG)
+![JMeter.HtmlParser.Compare](images/JMeter.HtmlParser.Compare.6-8.PNG)
+
 Описание столбцов:
 
 -    **Before Start Render** — количество запросов, сделанных браузером, до момента начала отображения содержимого страницы. Это html-разметка, основные js и css-файлы, основные изображения.
